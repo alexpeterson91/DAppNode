@@ -17,7 +17,7 @@ docker-compose -f ./DNP_WIREGUARD/docker-compose-wireguard.yml build
 docker save wireguard.dnp.dappnode.eth:"$WIREGUARD_VERSION" | xz -e9vT0 >/images/wireguard.dnp.dappnode.eth_"$WIREGUARD_VERSION"_linux-amd64.txz
 
 echo "Cloning & building DNP_IPFS..."
-git clone -b "v${IPFS_VERSION}" https://github.com/dappnode/DNP_IPFS
+git clone -b "v${IPFS_VERSION}" https://github.com/alexpeterson91/DNP_IPFS
 docker-compose -f ./DNP_IPFS/docker-compose-ipfs.yml build
 docker save ipfs.dnp.dappnode.eth:"$IPFS_VERSION" | xz -e9vT0 >/images/ipfs.dnp.dappnode.eth_"$IPFS_VERSION"_linux-amd64.txz
 
